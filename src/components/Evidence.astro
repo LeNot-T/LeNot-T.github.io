@@ -23,30 +23,19 @@ const evidenceCategories = [
 ];
 ---
 
-<section class="project">
+<section class="evidence">
   <div class="content">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects">
+    <h2 class="section-title">Evidencias</h2>
+    <div class="evidence">
       {
-        projects.map((project) => (
+        evidenceCategories.map((category) => (
           <a
-            href={project.url}
-            class="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={`--project-color: ${project.color}`}
+          href={`#${category.id}`}
+          class="project-link"
+          style={`--project-color: ${category.color}`}
           >
-            <span class="project-icon">◈</span>
-            <span class="project-name">{project.name}</span>
-            <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M7 17L17 7M17 7H7M17 7V17"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+          <span class="project-icon">◈</span>
+          <span class="project-name">{category.label}</span>
           </a>
         ))
       }
