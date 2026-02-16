@@ -2,7 +2,7 @@
 const video = {
   title: "Presentación",
   description: "Conóceme",
-  youtubeId: "OMBQrOa0ioE",
+  src: "/Presentacion.mp4",
 };
 ---
 
@@ -11,49 +11,18 @@ const video = {
   <p class="video-description">{video.description}</p>
 
   <div class="video-wrapper">
-    <iframe
-      src={`https://www.youtube.com/embed/${video.youtubeId}`}
-      title={video.title}
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <video
+      controls
+      preload="metadata"
+      src={video.src}
+    ></video>
   </div>
 </section>
 
 <style>
-  .video-section {
-    max-width: 900px;
-    margin: 6rem auto;
-    padding: 0 2rem;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--ctp-text);
-  }
-
-  .video-description {
-    margin-bottom: 2.5rem;
-    color: var(--ctp-subtext0);
-  }
-
-  .video-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 16px;
-    overflow: hidden;
-    background: var(--ctp-surface0);
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    inset: 0;
+  .video-wrapper video {
     width: 100%;
     height: 100%;
-    border: 0;
+    border-radius: 16px;
   }
 </style>
