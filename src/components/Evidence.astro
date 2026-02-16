@@ -31,11 +31,11 @@ const evidenceCategories = [
         evidenceCategories.map((category) => (
           <a
           href={`#${category.id}`}
-          class="project-link"
-          style={`--project-color: ${category.color}`}
+          class="evidence-link"
+          style={`--evidence-color: ${category.color}`}
           >
-          <span class="project-icon">◈</span>
-          <span class="project-name">{category.label}</span>
+          <span class="evidence-icon">◈</span>
+          <span class="evidence-name">{category.label}</span>
           </a>
         ))
       }
@@ -44,7 +44,7 @@ const evidenceCategories = [
 </section>
 
 <style>
-  .project {
+  .evidence {
     padding: 6rem 2rem;
     display: flex;
     justify-content: center;
@@ -63,13 +63,13 @@ const evidenceCategories = [
     text-align: center;
   }
 
-  .projects {
+  .evidence {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
 
-  .project-link {
+  .evidence-link {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -84,7 +84,7 @@ const evidenceCategories = [
     overflow: hidden;
   }
 
-  .project-link::before {
+  .evidence-link::before {
     content: "";
     position: absolute;
     inset: -1px;
@@ -95,18 +95,18 @@ const evidenceCategories = [
     z-index: 0;
   }
 
-  .project-link:hover::before {
+  .evidence-link:hover::before {
     transform: scaleX(1);
   }
 
-  .project-icon {
+  .evidence-icon {
     font-size: 1.5rem;
     color: var(--project-color);
     transition: all 0.3s ease;
     z-index: 1;
   }
 
-  .project-name {
+  .evidence-name {
     flex: 1;
     font-size: 1.25rem;
     font-weight: 500;
@@ -114,7 +114,7 @@ const evidenceCategories = [
     transition: color 0.3s ease;
   }
 
-  .project-arrow {
+  .evidence-arrow {
     width: 24px;
     height: 24px;
     color: var(--project-color);
@@ -122,16 +122,16 @@ const evidenceCategories = [
     z-index: 1;
   }
 
-  .project-link:hover {
+  .evidence-link:hover {
     transform: translateX(8px);
   }
 
-  .project-link:hover .project-icon,
-  .project-link:hover .project-arrow {
+  .evidence-link:hover .evidence-icon,
+  .evidence-link:hover .evidence-arrow {
     color: var(--ctp-base);
   }
 
-  .project-link:hover .project-name {
+  .evidence-link:hover .evidence-name {
     color: var(--ctp-base);
   }
 
@@ -145,11 +145,11 @@ const evidenceCategories = [
       margin-bottom: 2rem;
     }
 
-    .project-link {
+    .evidence-link {
       padding: 1.25rem 1.5rem;
     }
 
-    .project-name {
+    .evidence-name {
       font-size: 1.1rem;
     }
   }
