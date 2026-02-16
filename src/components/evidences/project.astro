@@ -1,0 +1,72 @@
+---
+const evidences = [
+  {
+    title: "Nothin' here yet",
+    description: "Oops",
+    image: "/evidence/Evidence-placeholder.jpg",
+  },
+];
+---
+
+<section id="project" class="evidence-section">
+  <h3>Proyecto</h3>
+
+  <div class="evidence-grid">
+    {evidences.map((item) => (
+      <article class="evidence-card">
+  <div class="image-wrapper">
+    <img src={item.image} alt={item.title} />
+  </div>
+  <h4>{item.title}</h4>
+  <p>{item.description}</p>
+</article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .evidence-section {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+  }
+
+  .evidence-section h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+    color: var(--ctp-text);
+    font-family: "Jacquard 24", system-ui, sans-serif;
+  }
+
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .evidence-card {
+    background-color: var(--ctp-surface0);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .evidence-card img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+  .evidence-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .evidence-card p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+</style>
