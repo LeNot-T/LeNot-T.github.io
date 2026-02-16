@@ -3,7 +3,7 @@ const evidences = [
   {
     title: "Nothin' here yet",
     description: "Oops",
-    image: "../assets/evidence/Evidence-placeholder.jpg",
+    image: "/assets/evidence/Evidence-placeholder.jpg",
   },
 ];
 ---
@@ -16,6 +16,7 @@ const evidences = [
       <article class="evidence-card">
         <h4>{item.title}</h4>
         <p>{item.description}</p>
+        <img src={item.image} alt={image.title} />
       </article>
     ))}
   </div>
