@@ -21,8 +21,13 @@ const video = {
 
 <style>
   .video-wrapper video {
-    max-width: 720px;
-    margin: 0 auto;
-    border-radius: 16px;
+    position: relative;
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--ctp-surface0);
   }
 </style>
