@@ -13,7 +13,7 @@ const { name, subtitle } = Astro.props;
   <div class="content">
     <img src={profilePicture.src} alt="trueberryless" class="pfp" />
     <div class="text">
-      <h1>Un rincón, de mi para ti.</h1>
+      <h1>Un rincón, de mi conveniencia para tu curiosidad.</h1>
       <p class="subtitle">{name}, {subtitle}</p>
     </div>
   </div>
@@ -64,6 +64,8 @@ const { name, subtitle } = Astro.props;
     font-size: 1rem;
     color: var(--ctp-subtext0);
     opacity: 0.8;
+    font-family: "Caveat", system-ui, sans-serif;
+
   }
 
   @media (max-width: 600px) {
