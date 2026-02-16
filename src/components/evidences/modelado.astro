@@ -12,3 +12,14 @@ const evidences = [
   },
 ];
 ---
+
+<section id="modelado" class="evidence-section">
+  <h3>Modelado</h3>
+
+  {evidences.map((item) => (
+    <article>
+      <h4>{item.title}</h4>
+      <p>{item.description}</p>
+    </article>
+  ))}
+</section>

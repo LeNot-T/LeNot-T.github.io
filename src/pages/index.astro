@@ -6,6 +6,10 @@ import WaveDivider from "../components/WaveDivider.astro";
 import Webring from "../components/Webring.astro";
 import SpotifyNowPlaying from "../components/SpotifyNowPlaying.astro";
 import Socials from "../components/Socials.astro";
+import Modelado from "../components/evidences/modelado.astro";
+import Normalizacion from "../components/evidences/normalizacion.astro";
+import SQL from "../components/evidences/sql.astro";
+import Project from "../components/evidences/project.astro";
 
 const variables = {
   name: "Alejandro Ferrer",
@@ -21,6 +25,10 @@ const variables = {
 
     <Evidence />
     <WaveDivider color="rosewater" speed={100} size={1.6} direction="right" />
+    <Modelado />
+    <Normalizacion />
+    <SQL />
+    <Project />
 
     <SpotifyNowPlaying />
     <WaveDivider color="rosewater" speed={100} size={1.6} direction="left" />
