@@ -14,10 +14,12 @@ const evidences = [
   <div class="evidence-grid">
     {evidences.map((item) => (
       <article class="evidence-card">
-        <img src={item.image} />
-        <h4>{item.title}</h4>
-        <p>{item.description}</p>
-      </article>
+  <div class="image-wrapper">
+    <img src={item.image} alt={item.title} />
+  </div>
+  <h4>{item.title}</h4>
+  <p>{item.description}</p>
+</article>
     ))}
   </div>
 </section>
@@ -48,8 +50,15 @@ const evidences = [
     border-radius: 14px;
     padding: 1.5rem;
     text-align: center;
-    max-width: 720px;
   }
+
+  .evidence-card img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
 
   .evidence-card h4 {
     margin-bottom: 0.5rem;
