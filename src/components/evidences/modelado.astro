@@ -1,14 +1,9 @@
 ---
 const evidences = [
   {
-    title: "Modelo entidad-relación",
-    description: "Diseño conceptual del sistema.",
-    image: "/assets/evidence/modelado-er.png",
-  },
-  {
-    title: "Diagrama UML",
-    description: "Relación entre clases principales.",
-    image: "/assets/evidence/uml.png",
+    title: "Nothin' here yet",
+    description: "Oops",
+    image: "/assets/evidence/Evidence-placeholder.jpg",
   },
 ];
 ---
@@ -16,10 +11,50 @@ const evidences = [
 <section id="modelado" class="evidence-section">
   <h3>Modelado</h3>
 
-  {evidences.map((item) => (
-    <article>
-      <h4>{item.title}</h4>
-      <p>{item.description}</p>
-    </article>
-  ))}
+  <div class="evidence-grid">
+    {evidences.map((item) => (
+      <article class="evidence-card">
+        <h4>{item.title}</h4>
+        <p>{item.description}</p>
+      </article>
+    ))}
+  </div>
 </section>
+
+<style>
+  .evidence-section {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+  }
+
+  .evidence-section h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+    color: var(--ctp-text);
+  }
+
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .evidence-card {
+    background-color: var(--ctp-surface0);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .evidence-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .evidence-card p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+</style>
