@@ -36,4 +36,13 @@ const variables = {
 
     <Socials />
   </main>
+
+  <div id="image-modal" class="image-modal">
+    <img id="modal-img" />
+  </div>
+
+  <script type="module" client:load>
+    import { setupLightbox } from "../scripts/lightbox.js";
+    setupLightbox();
+  </script>
 </Layout>
