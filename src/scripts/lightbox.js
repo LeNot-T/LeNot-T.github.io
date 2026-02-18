@@ -4,10 +4,16 @@ export function setupLightbox() {
 
   if (!modal || !modalImg) return;
 
-  window.openImage = (src) => {
+  document.addEventListener("click", (e) => {
+    const wrapper = e.target.closest(".image-wrapper");
+    if (!wrapper) return;
+
+    const src = wrapper.dataset.image;
+    if (!src) return;
+
     modalImg.src = src;
     modal.classList.add("active");
-  };
+  });
 
   modal.addEventListener("click", () => {
     modal.classList.remove("active");
