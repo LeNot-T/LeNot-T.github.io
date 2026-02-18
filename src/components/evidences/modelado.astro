@@ -19,8 +19,11 @@ const evidences = [
   <div class="evidence-grid">
     {evidences.map((item) => (
       <article class="evidence-card">
-  <div class="image-wrapper">
-    <img src={item.image} alt={item.title} />
+  <div class="image-wrapper" onclick={`openImage('${item.image}')`}>
+  <img src={item.image} alt={item.title} />
+</div>
+  <div id="image-modal" class="image-modal">
+    <img id="modal-img" />
   </div>
   <h4>{item.title}</h4>
   <p>{item.description}</p>
@@ -28,6 +31,11 @@ const evidences = [
     ))}
   </div>
 </section>
+
+<script>
+  import { setupLightbox } from "../scripts/lightbox.js";
+  setupLightbox();
+</script>
 
 <style>
   .evidence-section {
@@ -74,4 +82,28 @@ const evidences = [
     font-size: 0.95rem;
     opacity: 0.85;
   }
+
+  .image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+}
+
+.image-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 14px;
+}
 </style>

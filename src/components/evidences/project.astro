@@ -14,8 +14,11 @@ const evidences = [
   <div class="evidence-grid">
     {evidences.map((item) => (
       <article class="evidence-card">
-  <div class="image-wrapper">
-    <img src={item.image} alt={item.title} />
+  <div class="image-wrapper" onclick={`openImage('${item.image}')`}>
+  <img src={item.image} alt={item.title} />
+</div>
+  <div id="image-modal" class="image-modal">
+    <img id="modal-img" />
   </div>
   <h4>{item.title}</h4>
   <p>{item.description}</p>
@@ -23,6 +26,11 @@ const evidences = [
     ))}
   </div>
 </section>
+
+<script>
+  import { setupLightbox } from "../scripts/lightbox.js";
+  setupLightbox();
+</script>
 
 <style>
   .evidence-section {
