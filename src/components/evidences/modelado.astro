@@ -27,6 +27,11 @@ const evidences = [
 </article>
     ))}
   </div>
+
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modal-img" />
+  </div>
 </section>
 
 <style>
@@ -77,4 +82,59 @@ const evidences = [
   .image-wrapper {
     cursor: zoom-in;
   }
+
+  .modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.modal .close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".modal .close");
+
+    if (!modal || !modalImg || !closeBtn) return;
+
+    document.addEventListener("click", (e) => {
+      const wrapper = e.target.closest(".image-wrapper");
+      if (!wrapper) return;
+
+      modalImg.src = wrapper.dataset.image;
+      modal.classList.add("open");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("open");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("open");
+    });
+  });
+</script>
