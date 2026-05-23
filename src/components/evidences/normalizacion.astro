@@ -15,41 +15,45 @@ const evidences = [
   <h3>Normalización</h3>
 
   <div class="evidence-grid">
-    {evidences.map((item) => (
-      <article class="evidence-card">
-  <div class="image-wrapper" data-image={item.image}>
-    <img src={item.image} alt={item.title} />
-  </div>
+  {evidences.map((item) => (
+    <article class="evidence-card">
+
+      <div class="image-wrapper" data-image={item.image}>
+        <img src={item.image} alt={item.title} />
+      </div>
+
+      <h4>{item.title}</h4>
+      <p>{item.description}</p>
+
+      {
+        item.link1 && (
+          <a
+            href={item.link1}
+            class="evidence-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acceda a información aquí
+          </a>
+        )
+      }
+
+      {
+        item.link2 && (
+          <a
+            href={item.link2}
+            class="evidence-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acceda a desarrollo aquí
+          </a>
+        )
+      }
+
+    </article>
+  ))}
 </div>
-  <h4>{item.title}</h4>
-  <p>{item.description}</p>
-  {
-  item.link && (
-    <a
-      href={item.link1}
-      class="evidence-button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Acceda a información aquí
-    </a>
-  )
-}
-{
-  item.link && (
-    <a
-      href={item.link2}
-      class="evidence-button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Acceda a solución aquí
-    </a>
-  )
-}
-</article>
-    ))}
-  </div>
 </section>
 
 <style>
