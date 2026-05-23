@@ -1,20 +1,33 @@
 ---
 const evidences = [
   {
-    title: "Modelo Relacional",
-    description: "Del ejercicio de Biblioteca",
-    image: "/evidence/MR Biblioteca.jpg",
+    title: "Modelo-Entidad Relación - Biblioteca",
+    description: "El día martes 13 de febrero se realizó una actividad no calificable
+    bajo el concepto de entender las bases de la creación de un modelo-Entidad Relación.
+    Esta vez bajo el concepto de una biblioteca.",
+    image: "/evidence/MER Biblioteca.jpg",
   },
   {
-    title: "Modelo Relacional",
-    description: "Del ejercicio de Hospital",
-    image: "/evidence/MR Hospital.jpg",
+    title: "Modelo-Entidad Relación - Hospital",
+    description: "El día martes 13 de febrero se realizó una actividad no calificable
+    bajo el concepto de entender las bases de la creación de un modelo-Entidad Relación.
+    Esta vez bajo el concepto de una hospital.",
+    image: "/evidence/MER Hospital.jpg",
   },
   {
-    title: "Modelo Relacional",
-    description: "Del Ejercicio Univeristy Champions League",
-    image: "/evidence/MR University_Champions_League.png",
+    title: "Modelo-Entidad Relación - University Champions League",
+    description: "El día martes 13 de febrero se realizó una actividad no calificable
+    bajo el concepto de entender las bases de la creación de un modelo-Entidad Relación.
+    Esta vez bajo el concepto de la empresa Univeristy Champions League",
+    image: "/evidence/MER University_Champions_League.png",
   },
+  {
+    title: "Taller Grupal Fase 1 - Residuos",
+    description: "Para este taller se realizó el análisis de supuestos para una empresa 
+    de recolección de residuos.",
+    image: "/evidence/MER Residuos.png",
+    link: "https://drive.google.com/file/d/1_IihwV5a8DAivzdxrmDT-G6Y--i41sF3/view?usp=sharing"
+  }
 ];
 ---
 
@@ -29,6 +42,18 @@ const evidences = [
   </div>
   <h4>{item.title}</h4>
   <p>{item.description}</p>
+  {
+  item.link && (
+    <a
+      href={item.link}
+      class="evidence-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Access Here
+    </a>
+  )
+}
 </article>
     ))}
   </div>
@@ -115,6 +140,23 @@ const evidences = [
   font-size: 2rem;
   color: white;
   cursor: pointer;
+}
+
+.evidence-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  background-color: var(--ctp-lavender);
+  color: var(--ctp-base);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.evidence-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 </style>
 
